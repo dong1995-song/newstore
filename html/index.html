@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/flexible.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <img src="../image/tou.png" alt="">
+            <ul class="uls">
+
+            </ul>
+        </header>
+        <section>
+            <div class="module1">
+                <span>一周吃什么</span>
+                <span>轻松解决一日三餐的世纪难题</span>
+            </div>
+            <div class="content">
+                <!-- <div class="module2">
+                            <img src="../image/tou.png" alt="" class="tou">
+                            <span>美食日记</span>
+                            <img src="../image/banner.png" alt="" class="banner">
+                            <p>【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法更惊艳</p>
+                            <span>浏览 109999</span>
+                            <span><img src="../image/fenxiang.png" alt="" class="fx">分享</span>
+                        </div>
+                        <div class="module3">
+                            <ul>
+                                <li>
+                                    <img src="../image/tu1.png" alt="">
+                                    <div class="ri">
+                                        <span>上班族的便当</span>
+                                        <p>【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法</p>
+                                        <span>浏览1999</span>
+                                        <img src="../image/fenxiang.png" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="../image/tu2.png" alt="">
+                                    <div class="ri">
+                                        <span>上班族的便当</span>
+                                        <p>【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法</p>
+                                        <span>浏览1999</span>
+                                        <img src="../image/fenxiang.png" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="../image/tu3.png" alt="">
+                                    <div class="ri">
+                                        <span>上班族的便当</span>
+                                        <p>【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法</p>
+                                        <span>浏览1999</span>
+                                        <img src="../image/fenxiang.png" alt="">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> -->
+            </div>
+
+        </section>
+        <footer>
+            <ul>
+                <li>
+                    <img src="../image/icon_1.png" alt="">
+                    <span>首页</span>
+                </li>
+                <li>
+                    <img src="../image/icon_2.png" alt="">
+                    <span>分类</span>
+                </li>
+                <li>
+                    <img src="../image/icon_3.png" alt="">
+                    <span>发现</span>
+                </li>
+                <li>
+                    <img src="../image/icon_4.png" alt="">
+                    <span>购物车</span>
+                </li>
+                <li>
+                    <img src="../image/icon_5.png" alt="">
+                    <span>我的</span>
+                </li>
+            </ul>
+        </footer>
+    </div>
+</body>
+<script>
+    var tit = [
+        { name: '精选' },
+        { name: '快手食谱' },
+        { name: '甜点饮品' },
+        { name: '生活百科' },
+    ]
+
+    var con = [
+        {
+            tou: '../image/tou.png',
+            spa: '美食日记',
+            banner: '../image/banner.png',
+            liulan: '浏览10999',
+            fenxiang: '../image/fenxiang.png',
+
+            img1: '../image/tu1.png',
+            ti1: '上班族的便当',
+            nei1: '【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法',
+            la1: '浏览1999',
+
+            img2: '../image/tu1.png',
+            ti2: '上班族的便当',
+            nei2: '【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法',
+            la2: '浏览1999',
+
+            img3: '../image/tu1.png',
+            ti3: '上班族的便当',
+            nei3: '【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法',
+            la3: '浏览1999',
+        },
+        {
+            tou: '../image/tou2.png',
+            spa: '美食日记',
+            banner: '../image/banner2.png',
+            liulan: '浏览10999',
+            fenxiang: '../image/fenxiang.png',
+
+            img1: '../image/tu2.png',
+            ti1: '上班族的便当',
+            nei1: '【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法',
+            la1: '浏览1999',
+
+            img2: '../image/tu2.png',
+            ti2: '上班族的便当',
+            nei2: '【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法',
+            la2: '浏览1999',
+
+            img3: '../image/tu2.png',
+            ti3: '上班族的便当',
+            nei3: '【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法',
+            la3: '浏览1999',
+        },
+        {
+            tou: '../image/tou3.png',
+            spa: '美食日记',
+            banner: '../image/banner3.png',
+            liulan: '浏览10999',
+            fenxiang: '../image/fenxiang.png',
+
+            img1: '../image/tu3.png',
+            ti1: '上班族的便当',
+            nei1: '【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法',
+            la1: '浏览1999',
+
+            img2: '../image/tu3.png',
+            ti2: '上班族的便当',
+            nei2: '【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法',
+            la2: '浏览1999',
+
+            img3: '../image/tu3.png',
+            ti3: '上班族的便当',
+            nei3: '【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法',
+            la3: '浏览1999',
+        },
+        {
+            tou: '../image/tou.png',
+            spa: '美食日记',
+            banner: '../image/banner4.png',
+            liulan: '浏览10999',
+            fenxiang: '../image/fenxiang.png',
+
+            img1: '../image/tu1.png',
+            ti1: '上班族的便当',
+            nei1: '【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法',
+            la1: '浏览1999',
+
+            img2: '../image/tu1.png',
+            ti2: '上班族的便当',
+            nei2: '【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法',
+            la2: '浏览1999',
+
+            img3: '../image/tu1.png',
+            ti3: '上班族的便当',
+            nei3: '【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法',
+            la3: '浏览1999',
+        },
+    ];
+    var uls = document.getElementsByClassName('uls')[0];
+    var content = document.getElementsByClassName('content')[0];
+
+    var inde = 0;
+
+    function shang(fu) {
+        var html = '';
+        for (var i in tit) {
+            html += `
+            <li data-ind = '${i}' class='${i == 0 ? 'active' : ''}'>${tit[i].name}</li>
+            `
+        }
+        uls.innerHTML = html;
+        fu && fu();
+    } shang(function fu() {
+        uls.addEventListener('click', function (e) {
+            var target = event.target;
+            if (target.nodeName === 'LI') {
+                for (var i = 0; i < uls.children.length; i++) {
+                    uls.children[i].classList.remove('active');
+                }
+                target.classList.add('active');
+                inde = target.dataset.ind;
+                xia(inde);
+            }
+        })
+    });
+
+    function xia(index) {
+        var lis = '';
+        var co = con[index];
+        lis += `
+        <div class="module2">
+                            <img src="${co.tou}" alt="" class="tou">
+                            <span>${co.spa}</span>
+                            <img src="${co.banner}" alt="" class="banner">
+                            <p>【早餐豆浆炖菜】豆浆配油条太老套了！这个新吃法更惊艳</p>
+                            <span>${co.liulan}</span>
+                            <span><img src="${co.fenxiang}" alt="" class="fx">分享</span>
+                        </div>
+                        <div class="module3">
+                            <ul>
+                                <li>
+                                    <img src="${co.img1}" alt="">
+                                    <div class="ri">
+                                        <span>${co.ti1}</span>
+                                        <p>${co.nei1}</p>
+                                        <span>${co.la1}</span>
+                                        <img src="${co.fenxiang}" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="${co.img2}" alt="">
+                                    <div class="ri">
+                                        <span>${co.ti2}</span>
+                                        <p>${co.nei2}</p>
+                                        <span>${co.la2}</span>
+                                        <img src="${co.fenxiang}" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="${co.img3}" alt="">
+                                    <div class="ri">
+                                        <span>${co.ti3}</span>
+                                        <p>${co.nei3}</p>
+                                        <span>${co.la3}</span>
+                                        <img src="${co.fenxiang}" alt="">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+        
+                `
+        content.innerHTML = lis;
+
+    } xia(inde);
+</script>
+
+</html>
