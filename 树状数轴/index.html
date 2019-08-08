@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var canvas = document.createElement('canvas');
+
+        canvas.width = 600;
+        canvas.height = 600;
+        canvas.style.border = '1px solid pink';
+        document.body.appendChild(canvas);
+
+        var ctx = canvas.getContext('2d');
+
+        // var colorarr = data.map(function(){
+        //     return randcolor();
+        // });
+        //画轴
+        // ctx.translate(60, 540);
+        // ctx.beginPath();
+        // //x
+        // ctx.moveTo(0, 0);
+        // ctx.lineTo(0, -480);
+        // //y
+        // ctx.moveTo(0, 0);
+        // ctx.lineTo(480, 0);
+
+        // ctx.stroke();
+
+        var data = [
+            {
+                name: '小明',
+                grade: 40,
+            },
+            {
+                name: '小明1',
+                grade: 30,
+            },
+            {
+                name: '小明2',
+                grade: 50,
+            },
+            {
+                name: '小娜',
+                grade: 21,
+            },
+            {
+                name: '小娜1',
+                grade: 52,
+            },
+            {
+                name: '小娜2',
+                grade: 65,
+            },
+            {
+                name: '小娜3',
+                grade: 70,
+            },
+        ]
+        // var colorarr = data.map(function () {
+        //     return randcolor();
+        // });
+        // //求最大值
+        // var arr = JSON.parse(JSON.stringify(data));
+        // var newarr = arr.sort(function (a, b) {
+        //     return b.grade - a.grade;
+        // })[0].grade;
+        // // console.log(newarr);
+        // //画刻度
+        // ctx.textAlign = 'end';
+        // ctx.textBaseline = 'middle';
+        // for (i = 60; i <= 480; i += 60) {
+        //     ctx.beginPath();
+        //     ctx.moveTo(0, -i);
+        //     ctx.lineTo(3, -i);
+
+        //     ctx.fillText(i / 400 * newarr, -7, -i);
+        //     ctx.stroke();
+        // }
+
+        // //渲染数据
+        // ctx.save();
+        // ctx.textAlign = 'center';
+        // var margin = 480 / (data.length + 1);
+        // ctx.moveTo(margin, -(data[0].grade / newarr) * 480);
+        // for (i = 0; i < data.length; i++) {
+        //     ctx.fillStyle = colorarr[i];
+        //     var h = (data[i].grade) / 84 * 480;
+        //     ctx.beginPath();
+        //     ctx.rect(margin * (i + 1) - 7, 0, 15, -h);
+        //     ctx.fill();
+
+
+        //     ctx.fillText(data[i].name, margin * (i + 1), 12);
+        // };
+        // ctx.stroke();
+
+        // var colorarr = data.map(function () {
+        //         return randcolor();
+        //     });
+        //求最大值
+        var arr = JSON.parse(JSON.stringify(data));
+        var newarr = arr.sort(function (a, b) {
+            return b.grade - a.grade;
+        })[0].grade;
+        var margin = 480 / (data.length + 1);
+        var colorarr = [];
+
+        var colorarr = data.map(function () {
+            return randcolor();
+        });
+        // function randcolor() {
+
+        //     return `rgba(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},0.5)`
+        // };
+        ctx.translate(60, 540);
+        function drawzhou() {
+            //画轴
+            ctx.beginPath();
+            //x
+            ctx.moveTo(0, 0);
+            ctx.lineTo(0, -480);
+            //y
+            ctx.moveTo(0, 0);
+            ctx.lineTo(480, 0);
+
+            ctx.stroke();
+
+        }
+
+
+        function drawke() {
+            // var colorarr = data.map(function () {
+            //     return randcolor();
+            // });
+            // //求最大值
+            // var arr = JSON.parse(JSON.stringify(data));
+            // var newarr = arr.sort(function (a, b) {
+            //     return b.grade - a.grade;
+            // })[0].grade;
+            // console.log(newarr);
+            //画刻度
+            ctx.save();
+            ctx.textAlign = 'end';
+            ctx.textBaseline = 'middle';
+            for (i = 60; i <= 480; i += 60) {
+                ctx.beginPath();
+                ctx.moveTo(0, -i);
+                ctx.lineTo(3, -i);
+
+                ctx.fillText(i / 400 * newarr, -7, -i);
+                // ctx.stroke();
+            }
+            ctx.stroke();
+        }
+
+
+        function xuanran(e) {
+            //渲染数据
+            ctx.save();
+        //     var colorarr = data.map(function () {
+        //     return randcolor();
+        // });
+            ctx.textAlign = 'center';
+            for (i = 0; i < data.length; i++) {
+                ctx.fillStyle = colorarr[i];
+                var h = (data[i].grade) / 84 * 480;
+                ctx.beginPath();
+                ctx.rect(margin * (i + 1) - 7, 0, 15, -h);
+                // ctx.closePath();
+                if(e && ctx.isPointInPath(e.offsetX,e.offsetY)){
+                    ctx.fillStyle = 'green';
+
+                    ctx.fillText(data[i].grade, margin * (i + 1), -h-5);
+                }
+                ctx.fill();
+                ctx.fillText(data[i].name, margin * (i + 1), 12);
+            };
+            ctx.stroke();
+
+        }
+
+        drawzhou();
+        drawke();
+        xuanran();
+        canvas.addEventListener('mousemove', function (e) {
+            ctx.clearRect(-60, -540, 600, 600);
+            drawzhou();
+
+            drawke();
+            xuanran(e);
+        })
+
+        function randcolor() {
+
+            return `rgba(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},0.5)`
+        };
+    </script>
+</body>
+
+</html>
